@@ -1,6 +1,13 @@
 Lensfree Microscope for Quantification of Bacteria in Water
 ========================
 
+<p align="center">
+  <img src="media/FullAssembly.jpg" alt="Lensfree microscope fully assembled" height="200"/>
+  <img src="media/SlideAndLED.jpg" alt="Taken apart lensfree microscope" height="200"/>
+  <img src="media/Anabaena.jpg" alt="Image of cyanobacteria taken with the lensfree microscope" height="200"/>
+</p>
+
+
 Overview
 -----------------
 Water quality monitoring is essential for controlling pollutants and pathogens that can cause damage to the environment and human health. Traditional water quality monitoring involves gathering samples to send to laboratories, where water quality analysis is performed by qualified professionals, usually with the use of costly equipment. This is expensive and time consuming, which limits possible response to these pollutants and pathogens. Therefore, much effort has been put into developing technologies for low cost, in-situ water quality monitoring, including the use of in-situ microscopy. Despite this, lensfree imaging has not been explored for this purpose. Lensfree imaging is a form of microscopy that utilizes a partially coherent light source, a transparent sample, and a CMOS or CCD image sensor. Because the light is sufficiently coherent, the image can be digitally reconstructed to a higher degree of accuracy using holographic reconstruction. This makes lens-free holographic imaging an inexpensive way to accurately image an array of small particles, including microparticles, proteins, and cells. When compared to traditional microscopy, lensfree imaging has a higher field of view and is more cost effective, making it more applicable for in-situ sampling of large amounts of water. Here, I share my low-cost, lensfree holographic imaging system designed to monitor filamentous bacteria in activated sludge and cyanobacteria in ponds and lakes.
