@@ -43,7 +43,7 @@ Assembly
   - I have found that grabbing the lens as shown below, then twisting as if tightening a bottle, works well
 
  <p align="center">
-  <img src="media/LensRemoval.jpg" alt="How to remove lens from ardupixel howkeye" height="400"/>
+  <img src="media/RemoveLens.jpg" alt="How to remove lens from ardupixel howkeye" height="400"/>
 </p>
     
 - Assemble the canakit for the Raspberry Pi, as shown [here](https://www.youtube.com/watch?v=Wi_S7QkuN3M&t=150s)
