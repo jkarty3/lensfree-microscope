@@ -52,7 +52,7 @@ Assembly
   - You will need to solder the LED to its board, as well as the wires to that board
   - Also solder wires to the peristaltic pump
 <p align="center">
-  <img src="media/Circuit.png" alt="Wiring diagram for lensfree microscope" height="300"/>
+  <img src="media/CircuitDiagram.png" alt="Wiring diagram for lensfree microscope" height="300"/>
 </p>
 
 - Create the pinhole shown below (left)
@@ -95,20 +95,20 @@ Software
 ------------------
 First, install 64-bit Bookworm Raspberry Pi OS using the instructions [here](https://www.raspberrypi.com/documentation/computers/getting-started.html#installing-the-operating-system).
 
-- [Setup the camera:](https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/64MP-Hawkeye/)
+Then, [setup the camera:](https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/64MP-Hawkeye/)
 
-  - **Download and install Arducam packages:**
+- **Download and install Arducam packages:**
   
-    ```bash
+   ```bash
     wget -O install_pivariety_pkgs.sh https://github.com/ArduCAM/Arducam-Pivariety-V4L2-Driver/releases/download/install_script/install_pivariety_pkgs.sh
     chmod +x install_pivariety_pkgs.sh
     ./install_pivariety_pkgs.sh -p libcamera_dev
     ./install_pivariety_pkgs.sh -p libcamera_apps
     ```
 
-  - **Edit the config file:**
+ - **Edit the config file:**
   
-    ```bash
+   ```bash
     sudo nano /boot/firmware/config.txt
     ```
     Under `[all]`, add:
@@ -116,51 +116,35 @@ First, install 64-bit Bookworm Raspberry Pi OS using the instructions [here](htt
     dtoverlay=arducam-64mp
     ```
 
-  - **Save and reboot**  
+ - **Save, reboot, then test the camera**
 
-  - **Test the camera:**
-  
-    ```bash
+   ```bash
+    sudo reboot
     libcamera-still -t 5000
     ```
+Now clone this repo onto the desktop and install cv2
+
+```bash
+cd Desktop
+git clone https://github.com/jkarty3/lensfree-microscope.git
+sudo apt update
+sudo apt install python3-opencv
+```
 
 
 
-PYTHON SETUP
-------------
- 1. Create the following folders on Desktop:
-    - filamentous_system
-    - electronics_test
-
- 2. Move project files into these folders.
-
- 3. Install OpenCV:
-    sudo apt update
-    sudo apt install python3-opencv
 
 
-WIRING
-------
-LED:
- - Pin 12 → GPIO 18 (signal)
- - Pin 14 → GND
-
-Pump + Relay:
- - Pin 1  → 3.3V → VCC on relay
- - Pin 2  → 5V   → COM on relay
- - Pin 9  → GND  → GND on relay
- - Pin 6  → GND  → GND on pump
- - Pin 11 → GPIO 17 → IN on relay
- - Relay NO → Pump power line
-
-
-TESTING
+Testing
 -------
- 1. Take a test picture.
- 2. Adjust brightness if needed.
+- Run all files in the `electronics_test` folder.
+  - `test_led.py` should gradually dim and brighten the led
+  - `test_pic.py` should take a picture with the camera
+  - `test_pump.py` should turn the pump on and off at 2 second intervals
+  - `test_led_pic.py` should turn the led on and then take a picture. Use this script to calibrate the led brightness
 
 
-AUTOMATION
+Usage
 ----------
 Set cron job to run every 15 minutes:
 
