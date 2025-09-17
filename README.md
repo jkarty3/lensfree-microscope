@@ -146,10 +146,11 @@ Testing
 
 Usage
 ----------
-Set cron job to run every 15 minutes:
+This can be run with oversight by running `manual.py`, which will wait for user inputs before taking pictures.
 
-  crontab -e
-
-Add the following line:
-
-  */15 * * * * cd /home/jacob/Desktop/filamentous_system && /usr/bin/python3 filamentous.py >> filamentous.log 2>&1
+This can also be run autonomously by creating a cron job that calls `autonomous.py`. This one runs every 15 minutes.
+```bash
+crontab -e
+*/15 * * * * cd /home/user/Desktop/lensfree-microscope/data_collection && /usr/bin/python3 autonomous.py >> autonomous.log 2>&1
+```
+Consider modifying `autonomous.py` to push the images taken to the cloud.
