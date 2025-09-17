@@ -2,8 +2,8 @@ Lensfree Microscope for Quantification of Bacteria in Water
 ========================
 
 <p align="center">
-  <img src="media/FullAssembly.jpg" alt="Lensfree microscope fully assembled" height="400"/>
-  <img src="media/Anabaena.jpg" alt="Image of cyanobacteria taken with the lensfree microscope" height="400"/>
+  <img src="media/FullAssembly.jpg" alt="Lensfree microscope fully assembled" height="300"/>
+  <img src="media/Anabaena.jpg" alt="Image of cyanobacteria taken with the lensfree microscope" height="300"/>
 </p>
 
 
@@ -44,7 +44,7 @@ Assembly
   - I reccommend testing the camera immediately before and after doing this
 
  <p align="center">
-  <img src="media/RemoveLens.jpg" alt="How to remove lens from ardupixel howkeye" height="400"/>
+  <img src="media/RemoveLens.jpg" alt="How to remove lens from ardupixel howkeye" height="300"/>
 </p>
     
 - Assemble the canakit for the Raspberry Pi, as shown [here](https://www.youtube.com/watch?v=Wi_S7QkuN3M&t=150s)
@@ -52,7 +52,7 @@ Assembly
   - You will need to solder the LED to its board, as well as the wires to that board
   - Also solder wires to the peristaltic pump
 <p align="center">
-  <img src="media/Circuit.png" alt="Wiring diagram for lensfree microscope" height="400"/>
+  <img src="media/Circuit.png" alt="Wiring diagram for lensfree microscope" height="300"/>
 </p>
 
 - Create the pinhole shown below (left)
@@ -64,8 +64,8 @@ Assembly
   - Mount the holders using the two big holes in *MIDDLE* that are next to the spaces in the rectangle (far side in image below)
 
 <p align="center">
-  <img src="media/SlideAndLED.jpg" alt="Lensfree microscope taken apart" height="400"/>
-  <img src="media/BaseElectronics.jpg" alt="Electronics in the base of the lensfree microscope" height="400"/>
+  <img src="media/SlideAndLED.jpg" alt="Lensfree microscope taken apart" height="300"/>
+  <img src="media/BaseElectronics.jpg" alt="Electronics in the base of the lensfree microscope" height="300"/>
 </p>
 
 
@@ -93,27 +93,37 @@ Assembly
 
 Software
 ------------------
-- First, install 64-bit Bookworm Raspberry Pi OS using the instructions [here](https://www.raspberrypi.com/documentation/computers/getting-started.html#installing-the-operating-system)
-System:
- - Raspberry Pi 5
- - Raspberry Pi OS (64-bit, Bookworm)
+First, install 64-bit Bookworm Raspberry Pi OS using the instructions [here](https://www.raspberrypi.com/documentation/computers/getting-started.html#installing-the-operating-system).
 
-Camera Setup:
- 1. Download and install Arducam packages:
+- [Setup the camera:](https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/64MP-Hawkeye/)
+
+  - **Download and install Arducam packages:**
+  
+    ```bash
     wget -O install_pivariety_pkgs.sh https://github.com/ArduCAM/Arducam-Pivariety-V4L2-Driver/releases/download/install_script/install_pivariety_pkgs.sh
     chmod +x install_pivariety_pkgs.sh
     ./install_pivariety_pkgs.sh -p libcamera_dev
     ./install_pivariety_pkgs.sh -p libcamera_apps
+    ```
 
- 2. Edit config file:
+  - **Edit the config file:**
+  
+    ```bash
     sudo nano /boot/firmware/config.txt
-    Under [all], add:
-      dtoverlay=arducam-64mp
+    ```
+    Under `[all]`, add:
+    ```text
+    dtoverlay=arducam-64mp
+    ```
 
- 3. Save and reboot.
+  - **Save and reboot**  
 
- 4. Test camera:
+  - **Test the camera:**
+  
+    ```bash
     libcamera-still -t 5000
+    ```
+
 
 
 PYTHON SETUP
