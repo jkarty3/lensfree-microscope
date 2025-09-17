@@ -41,6 +41,7 @@ Assembly
 - Using a set of needle nose pliers, remove the lens from the camera
   - Be careful, as this step can damage or completely break your camera
   - I have found that grabbing the lens as shown below, then twisting as if tightening a bottle, works well
+  - I reccommend testing the camera immediately before and after doing this
 
  <p align="center">
   <img src="media/RemoveLens.jpg" alt="How to remove lens from ardupixel howkeye" height="400"/>
@@ -79,32 +80,20 @@ Assembly
   - Camera to *MIDDLE*
     - M2.5 × 4 screw (x4)
     - Screw into the pcb from below, as there needs to be as little space as possible between the camera and microscope slide
-  - Hat to Top:
-    - M3 × 6 × 5 TI
- - M3 × 8 screw
-
-LED to Hat:
- - M2 × 4 × 3.2 TI
- - M2 × 6 screw
-
-Middle to Base:
- - M2 × 4 TI
- - M2 × 6 screw
-
-Pump to Base:
- - M3 × 6 TI
- - M3 × 8 screw
-
-Relay to Base:
- - M2.5 × 4 TI
- - M2.5 × 6 screw
-
-Camera to Middle:
- - M2.5 × 4 screw
+  - *MIDDLE* to *BASE*
+    - M2 × 4 TI (x2)
+    - M2 × 6 screw (x2)
+  - LED board to *HAT*
+    - M2 × 4 × 3.2 TI (x2)
+    - M2 × 6 screw (x2)
+  - *HAT* to *TOP*
+    - M3 × 6 × 5 TI (x4)
+    - M3 × 8 screw (x4)
 
 
-RASPBERRY PI SETUP
+Software
 ------------------
+- First, install 64-bit Bookworm Raspberry Pi OS using the instructions [here](https://www.raspberrypi.com/documentation/computers/getting-started.html#installing-the-operating-system)
 System:
  - Raspberry Pi 5
  - Raspberry Pi OS (64-bit, Bookworm)
